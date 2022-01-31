@@ -9,11 +9,13 @@ export default new Vuetify({
     themes: {
       light: {
         primary: colors.indigo.lighten3,
-        secondary: colors.orange
+        secondary: colors.orange,
+        accent:colors.lime
       },
       dark: {
-        primary: colors.cyan,
-        secondary: colors.pink
+        primary: colors.lightGreen.accent2,
+        secondary: colors.pink,
+        accent:colors.lime
       },
     },
   },
