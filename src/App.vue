@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar app >
+    <v-app-bar app  @click.capture="$refs.footSwitch.switchShadow()" >
      <v-toolbar-title>PI Calsi</v-toolbar-title>
      <v-spacer/>
       <v-switch 
@@ -9,9 +9,8 @@
         :append-icon="`${switchLabel}`"
       ></v-switch>
     </v-app-bar>
-
-    <v-main>
-      <v-container>
+    <v-main  @click.capture="$refs.footSwitch.switchShadow()" >
+      <v-container  @click.capture="$refs.footSwitch.switchShadow()">
         <v-row dense>
           <v-divider></v-divider>
             <h5>{{sub_header}}</h5>
@@ -21,16 +20,21 @@
           <v-card
             elevation="7"
             shaped
-            class="mx-auto my-12">
+            style="height:450px">
           </v-card>
         </v-row>
       </v-container>
     </v-main>
+    <footerz ref="footSwitch"/>
   </v-app>
 </template>
 
 <script>
+import one from './components/footer.vue';
 export default {
+  components: { 
+    'footerz' : one
+    },
   name: 'App',
   data: () => ({ 
       darkMode: false,
